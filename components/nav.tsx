@@ -7,13 +7,14 @@ const Navigation = () =>{
         <nav>
         <ul>
             <li>
-                <Link href ='/' > home </Link>
+                <Link href ='/' > Home </Link>
+            </li>
+            <li className="spacer">&nbsp;</li>
+            <li>
+                <Link href='/drinks'> Drinks </Link>
             </li>
             <li>
-                <Link href='/drinks'> drinks </Link>
-            </li>
-            <li>
-                <Link href='/contact'> contact </Link>
+                <Link href='/contact'> Contact </Link>
             </li>
         </ul>
         </nav>

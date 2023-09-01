@@ -1,18 +1,37 @@
+/* Navigation styles */
 nav {
-    float: right;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-left: 10px;
-  }
-  
-  nav li:first-child {
-    margin-left: 0;
-  }
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  color: gray; /* Default text color */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav li {
+  margin-left: 20px; /* Adjust spacing between items */
+}
+
+nav .spacer {
+  flex-grow: 1; /* Empty space that takes up remaining available space */
+}
+
+nav a {
+  text-decoration: none;
+  color: gray; /* Default text color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+nav a:hover {
+  color: white;
+}
+
