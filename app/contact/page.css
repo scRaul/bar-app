@@ -1,15 +1,30 @@
 .contact-box{
     display: flex;
+    flex-direction: column;
     position: absolute;
     justify-content: space-evenly; /* Distribute cards evenly */
-    width: 90%; /* Adjust as needed */
+    width: 70%; /* Adjust as needed */
     height: 90vh;
     top: 10%;
-    left: 5%;
-    background-color: red;
+    left: 15%;
     align-items: center;
 }
 .card{
-    width: 30%;
-    background-color: blue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+  
+.user-id {
+font-size: 24px; /* Adjust font size as needed */
+font-weight: bold; /* Make user ID bold */
+margin: 15px; /* Spacing between user ID and platform name */
+}
+
+.social {
+font-size: 18px; /* Adjust font size as needed */
+color: gray;
 }

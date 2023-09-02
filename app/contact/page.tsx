@@ -1,22 +1,29 @@
 "use client";
 import Link from "next/link";
 import Card from "../../components/card";
-import { Mail, Instagram } from "lucide-react";
+import { Mail, Instagram,Linkedin } from "lucide-react";
 import './page.css'
 
+const iconSize = 32;
 const socials = [
 	{
-		icon: <Mail size={20} />,
-		href: "mailto:sc.raul.17@gmail.com",
+		icon: <Mail size={iconSize} />,
+		href: "mailto:nav4rro@outlook.com",
 		label: "Email",
-		handle: "sc.raul.17@gmail.com",
+		handle: "nav4rro@outlook.com",
 	},
 	{
-		icon: <Instagram size={20} />,
+		icon: <Instagram size={iconSize} />,
 		href: "https://Instagram.com",
 		label: "Instagram",
-		handle: "@scRaul",
+		handle: "@gera4n",
 	},
+    {
+        icon: <Linkedin size={iconSize} />,
+        href: "https://www.linkedin.com/in/gerardo-navarro-705339257/",
+        label: "LinkedIn",
+        handle: "/gerardo-navarro-705339257"
+    }
 ];
 
 
@@ -33,16 +40,14 @@ function Contact(){
                     <span
                         aria-hidden="true"
                     />
-                    <span >
+                    <div className="icon" >
                         {s.icon}
-                    </span>{" "}
-                    <div >
-                        <span >
-                            {s.handle}
-                        </span>
-                        <span>
-                            {s.label}
-                        </span>
+                    </div>{" "}
+                    <div className="user-id">
+                        {s.handle}
+                    </div>
+                    <div className="social">
+                        {s.label}
                     </div>
                 </Link>
             </Card>

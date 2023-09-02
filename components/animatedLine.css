@@ -1,0 +1,29 @@
+/* AnimatedLine.css */
+.animated-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5px;
+  width: 90%;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.line {
+  width: 2px; /* Set the initial width of the line */
+  height: 2px; /* Line height */
+  background-color: #f4efef; /* Line color */
+  opacity: 1; /* Initially fully opaque */
+  animation: expandLine 2s ease-out forwards, splitLine 1s 1s ease-out forwards;
+}
+
+@keyframes expandLine {
+  0% {
+    width: 0;
+  }
+  70% {
+    width: 70%; /* Expand to 70% of the screen width */
+  }
+  100% {
+    width: 70%;
+  }
+}
