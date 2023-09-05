@@ -11,6 +11,7 @@ export const getAll = async ()  =>{
 
 export var jwtoken:string = "";
 export const setToken =(token:string)=>{jwtoken = token}
+
 export const postLogin = async (authData:ILogin) => {
     let response = await fetch(`${API}/admin/login`,{
         method: 'POST',
