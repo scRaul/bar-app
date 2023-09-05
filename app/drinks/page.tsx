@@ -1,7 +1,7 @@
 "use client"
 import PolaroidCard from '@/components/polaroidCard'
 import DrinkInfo from '@/components/drinkInfo'
-import {getAll} from '../../controllers/getDrinks'
+import {getAll} from '../../controllers/request'
 import './page.css'
 import Drink from '../../interfaces/drink'
 
