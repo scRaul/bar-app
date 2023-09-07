@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { postLogin } from "@/controllers/request";
 import ILogin from "@/interfaces/iLogin";
-import { setToken } from "@/controllers/request";
+
 import './drinkInfo.css'
 import './login.css'
 import Card from "./card"
 import { ArrowRight } from 'lucide-react';
+
+
 interface LoginProps {
     onLogin :(isAuthenticated : boolean , token?: string) => void;
 }
@@ -23,10 +25,11 @@ const Login: React.FC<LoginProps> = ({onLogin}) =>{
                 password:password
             }
             const response = await postLogin(authData);
+            console.log(response);
             if(response.status == 422){
                 setError('Validation failed')
             }else if(response.token){
-                setToken(response.token) ;
+                localStorage.setItem('jwtToken',response.token);
                 onLogin(true,response.token);
             } 
         }catch(err){
@@ -42,6 +45,7 @@ const Login: React.FC<LoginProps> = ({onLogin}) =>{
           <h2>Login</h2>
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className="modal-content">
+        <form>
           <input className="input"
             type="text"
             placeholder="Username"
@@ -54,6 +58,7 @@ const Login: React.FC<LoginProps> = ({onLogin}) =>{
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          </form>
           </div>
           <ArrowRight size="48" className="enter" onClick={handleLogin}/>
           </Card>

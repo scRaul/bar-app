@@ -12,18 +12,20 @@ import AnimatedLine from '@/components/animatedLine'
 const DrinkList: React.FC =()=>{
     const [drinks,setDrinks] = useState<Drink[]>([]); 
     const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
-    const test = () =>{
-         console.log('helloo otest')
-    }
     useEffect( () =>{
        const getDrinkList = async() =>{
         try{
             let drinkJson = await getAll();
+            console.log(drinkJson);
+            if(!drinkJson){
+                throw new Error("failed to fetch drinks");
+            }
             drinkJson = drinkJson.drinks;
             const list: Drink[] = Object.values(drinkJson);
             setDrinks(list);
         }catch(err){
             console.log(err);
+            throw err;
         }
        };
        getDrinkList();

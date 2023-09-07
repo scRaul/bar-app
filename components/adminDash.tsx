@@ -1,9 +1,9 @@
 const AdminDash = () => {
     return (
-      <div>
-        <h2>Welcome to the Admin Dashboard</h2>
+      <main>
+        {/* <h2>Welcome to the Admin Dashboard</h2> */}
         {/* Admin content goes here */}
-      </div>
+      </main>
     );
   };
   

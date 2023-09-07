@@ -6,6 +6,7 @@ nav {
   color: gray; /* Default text color */
   align-items: center;
   margin-bottom: 20px;
+  z-index: 2000 ;
 }
 
 nav ul {
