@@ -1,5 +1,7 @@
 'use client'
 import './page.css'
+
+
 import TitleTransform from '../components/titleTransform';
 import AnimatedLine from '../components/animatedLine';
 

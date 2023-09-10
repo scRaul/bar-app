@@ -8,15 +8,22 @@ const DrinkInfo = ({ drink, onClose } : {drink : Drink, onClose : any }) => {
   return (
     <div className="detail-modal">
         <Card>
-        {/* <button onClick={onClose}>Close</button> */}
-        <ArrowBigLeft onClick={onClose}/>
+          <div className='top-card'>
+            <ArrowBigLeft size={32} className='back' onClick={onClose}/>
+            <h2 className='title'>{drink.name}</h2>
+        </div>
       <div className="modal-content">
-        <h2>{drink.name}</h2>
-        <p>Ingredients:  </p>
-        {drink.ingredientList.map(item =>(
-            <p>{item}</p>
-        ))}
-        <p>Description: {drink.description}</p>
+       
+      <ul className="list">
+        {drink.ingredientList.map((ingredient, index) => (
+              <li className='item' key={index}>
+                {ingredient}
+              </li>
+            ))}
+        </ul>
+          <br></br>
+        <p>{drink.description}</p>
+
       </div>
       </Card>
     </div>

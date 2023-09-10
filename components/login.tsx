@@ -2,7 +2,6 @@ import { useState } from "react";
 import { postLogin } from "@/controllers/request";
 import ILogin from "@/interfaces/iLogin";
 
-import './drinkInfo.css'
 import './login.css'
 import Card from "./card"
 import { ArrowRight } from 'lucide-react';
@@ -40,19 +39,19 @@ const Login: React.FC<LoginProps> = ({onLogin}) =>{
     }
 
     return (
-        <div className="detail-modal">
-            <Card>
+        <div className="login-modal">
+          <Card >
           <h2>Login</h2>
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className="modal-content">
         <form>
-          <input className="input"
+          <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <input className="input"
+          <input 
             type="password"
             placeholder="Password"
             value={password}
@@ -60,7 +59,7 @@ const Login: React.FC<LoginProps> = ({onLogin}) =>{
           />
           </form>
           </div>
-          <ArrowRight size="48" className="enter" onClick={handleLogin}/>
+          <ArrowRight size={48} className="enter bttn" onClick={handleLogin}/>
           </Card>
         </div>
       );

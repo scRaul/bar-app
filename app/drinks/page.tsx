@@ -16,7 +16,6 @@ const DrinkList: React.FC =()=>{
        const getDrinkList = async() =>{
         try{
             let drinkJson = await getAll();
-            console.log(drinkJson);
             if(!drinkJson){
                 throw new Error("failed to fetch drinks");
             }

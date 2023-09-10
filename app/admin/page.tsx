@@ -39,9 +39,7 @@ const AdminPage: React.FC = () => {
     <div>
       {isLoggedIn ? (
         <div>
-          <nav>
-            <button onClick={handleLogout}>Logout</button>
-          </nav>
+            <button className="logout" onClick={handleLogout}>Admin Logout</button>
           <AdminDash />
         </div>
       ) : (

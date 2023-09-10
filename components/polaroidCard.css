@@ -1,6 +1,7 @@
 .polariod{
   width: 250px;
   height:333px;
+  justify-content: center;
 }
   .polaroid-image {
     width: 200px;

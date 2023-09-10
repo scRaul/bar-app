@@ -1,0 +1,35 @@
+.card{
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+}
+.top-info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.mid-info{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.admin-image{
+    width: 150px;
+    max-height: 200px;
+}
+.admin-description{
+    margin-top: 10px;
+    font-size: 11px;
+}
+.admin-ingredientList{
+    padding-left: 5px;
+    font-size: 14px;
+    list-style-position: inside;
+}
+.bttn{
+    color:gray;
+    margin: 2px;
+}
+.bttn:hover{
+    color:white;
+}
