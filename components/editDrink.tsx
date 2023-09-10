@@ -102,6 +102,7 @@ const EditDrink: React.FC<EditDrinkProps> = ({ drink, onClose, onSave }) => {
             className="short-input"
             id='price'
             type='number'
+            step='.01'
             placeholder="Price"
             value={price}
             onChange={(e) => setPrice( parseFloat(e.target.value) )}
