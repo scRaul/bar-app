@@ -10,6 +10,9 @@ const Navigation = () =>{
             <li>
                 <Link href ='/' > Home </Link>
             </li>
+            <li>
+                <Link href ='/admin'> Admin </Link>
+            </li>
             <li className="spacer">&nbsp;</li>
             <li>
                 <Link href='/drinks'> Drinks </Link>
