@@ -32,9 +32,11 @@ const EditDrink: React.FC<EditDrinkProps> = ({ drink, onClose, onSave }) => {
       setDescription(drink.description);
     }
   }, [drink]);
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
+  const handleFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+        setImage(file);
+    }
   };
 
   const handleAddIngredient = () => {
