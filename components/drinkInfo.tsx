@@ -11,6 +11,7 @@ const DrinkInfo = ({ drink, onClose } : {drink : Drink, onClose : any }) => {
           <div className='top-card'>
             <ArrowBigLeft size={32} className='back' onClick={onClose}/>
             <h2 className='title'>{drink.name}</h2>
+            <div className='spacer'></div>
         </div>
       <div className="modal-content">
        

@@ -30,7 +30,8 @@ const socials = [
 function Contact(){
 
     return (
-        <div className="contact-box">
+        <main>
+            <div className="contact-box">
             {socials.map((s) => (
                 <Card>
                 <Link
@@ -52,8 +53,8 @@ function Contact(){
                 </Link>
             </Card>
             ))}
-
-        </div>
+            </div>
+        </main>
     )
 }
 

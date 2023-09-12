@@ -22,6 +22,7 @@
   }
   .top-card{
     display: flex;
+    justify-content: space-evenly;
   }
   .title{
     display: inline;
@@ -31,6 +32,9 @@
   .back{
     width: 40px;
     color:gray
+  }
+  .spacer{
+    width: 40px;
   }
   .back:hover{
     color:white;

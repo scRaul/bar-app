@@ -1,21 +1,21 @@
-.polariod {
-  width: 250px;
-  height: 333px;
-}
 .polaroid .card{ 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-
+  margin: 5px;
 }
+
+.polariod {
+  width: 250px;
+}
+
 .polaroid-image {
   width: 200px;
   max-height: 250px; /* Adjust as needed */
   border: 2px solid #f5f5f5; /* Polaroid-like border */
   border-radius: 5px;
 }
-
 .polaroid-details {
   width: 100%;
   margin-top: 15px;
@@ -32,4 +32,27 @@
 .polaroid-price {
   font-size: 16px;
   color: #888;
+}
+
+@media (max-width: 700px),(max-height: 400px ){
+  .polaroid .card{
+    padding: 5px;
+  }
+  .polariod{
+    width: 125px;
+    max-height: 250px;
+  }
+  .polaroid-image{
+    width: 100px;
+    max-height: 125px;
+  }
+  .polaroid-name {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  .polaroid-price {
+    font-size: 8px;
+    color: #888;
+  }
 }

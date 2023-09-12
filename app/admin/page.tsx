@@ -36,7 +36,7 @@ const AdminPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <main>
       {isLoggedIn ? (
         <div>
             <button className="logout" onClick={handleLogout}>Admin Logout</button>
@@ -45,7 +45,7 @@ const AdminPage: React.FC = () => {
       ) : (
         <Login onLogin={handleLogin} />
       )}
-    </div>
+    </main>
   );
 };
 

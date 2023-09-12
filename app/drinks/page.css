@@ -1,12 +1,11 @@
 .drinks{
-    display: flex;
-    position: absolute;
-    height: 100vh;
-    width: 90%;
-    left: 5%;
-    top: 100px;
+    position: relative;
+    margin: 0;
+    display: flex; 
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    align-items:flex-start;
+    background-color: red;
 }
 .blur{
     filter: blur(5px);
