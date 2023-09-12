@@ -2,15 +2,21 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    justify-content: space-evenly; /* Distribute cards evenly */
-    width: 70%; /* Adjust as needed */
-    height: 90vh;
-    top: 10%;
-    left: 15%;
+    justify-content: center; 
+    width: 80%;
+    left: 10%; 
+    height: 100vh;
     align-items: center;
 }
-.card{
-    width: 100%;
+@media (min-width:1388px){
+    .contact-box{
+        flex-direction: row;
+    }
+}
+.contact-box .card{
+    width: 350px;
+    height: 200px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,12 +25,12 @@
 }
   
 .user-id {
-font-size: 24px; /* Adjust font size as needed */
-font-weight: bold; /* Make user ID bold */
-margin: 15px; /* Spacing between user ID and platform name */
+font-size: 24px; 
+font-weight: bold;
+margin: 15px; 
 }
 
 .social {
-font-size: 18px; /* Adjust font size as needed */
+font-size: 18px;
 color: gray;
 }

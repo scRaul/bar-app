@@ -37,10 +37,7 @@ const DrinkList: React.FC =()=>{
    const closeDrinkInfo = () =>{
     setSelectedDrink(null);
    }
-   
-    // let drinkJson = await getAll();
-    // drinkJson = drinkJson.drinks;
-    // const drinks: Drink[] = (drinkJson as any) || [];
+
 
     return (
         <main>

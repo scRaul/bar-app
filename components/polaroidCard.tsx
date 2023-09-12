@@ -10,7 +10,7 @@ interface PolaroidCardProps {
   
   const PolaroidCard: React.FC<PolaroidCardProps> = ({ imageSrc, name, price, onClick}) => {
   return (
-    <div className='poloroid' onClick={onClick}>
+    <div className='polaroid' onClick={onClick}>
     <Card>
         <img src={imageSrc} alt={name} className="polaroid-image" />
         <div className="polaroid-details">

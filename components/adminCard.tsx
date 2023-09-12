@@ -20,7 +20,7 @@ interface AdminCardProps extends Drink {
     onDelete
 }) => {
   return (
-    <Card>
+    <Card className='admin-card'>
         <div className='top-info' >
             <div className="admin-name">{name}</div>
             <div className="admin-price">${price}</div>
