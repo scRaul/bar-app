@@ -1,36 +1,27 @@
-hr{
-    position: absolute;
-    width: 90%;
-    left: 5%;
-    top: 120px;
-    border: 1px solid white;;
+hr {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 120px;
+  border: 1px solid white;
 }
-.drinks{
-    display: flex;
-    position: absolute;
-    height: 100vh;
-    width: 90%;
-    left: 5%;
-    top: 150px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.blur {
+  filter: blur(5px);
 }
-.blur{
-    filter: blur(5px);
+.plus-button {
+  position: fixed;
+  top: 50px;
+  left: 20px;
 }
-.plus-button{
-    position: fixed;
-    top: 50px;
-    left: 20px;
+.plus {
+  position: fixed;
+  top: 36px;
+  left: 12px;
 }
-.plus{
-    position: fixed;
-    top:36px;
-    left: 12px;
+.pl {
+  color: gray;
 }
-.pl{
-    color: gray;
+.pl:hover {
+  color: white;
 }
-.pl:hover{
-    color: white;
-}
+

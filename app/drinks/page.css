@@ -1,12 +1,13 @@
-.drinks{
-    position: relative;
-    margin: 0;
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items:flex-start;
-    background-color: red;
+.drinks {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: red;
 }
-.blur{
-    filter: blur(5px);
+.blur {
+  filter: blur(5px);
 }
+
