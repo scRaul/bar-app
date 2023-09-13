@@ -94,10 +94,10 @@ const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
     <div className="admin-dash">
       <div className="admin-cntrl">
         <div className="add-bttn bttn" onClick={openNewDrink}>
-          <PlusCircle className="plus-icon" size={25} />
-          <Martini size={50} />
+          <PlusCircle className="plus-icon" size={12} />
+          <Martini size={30} />
         </div>
-        <LogOut size={50} className="bttn" onClick={openLogOutConfirmation} />
+        <LogOut size={30} className="bttn" onClick={openLogOutConfirmation} />
       </div>
 
       <div className={`drinks ${

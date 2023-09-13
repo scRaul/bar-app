@@ -26,3 +26,19 @@
   font-size: 14px;
   list-style-position: inside;
 }
+@media (max-width:400px){
+  .admin-card{
+    width: 250px;
+    height: 334px;
+    margin: 5px;
+  }
+  .admin-image {
+    width: 120px;
+    max-height: 160px;
+  }
+  .admin-ingredientList {
+    padding-left: 5px;
+    font-size: 12px;
+    list-style-position: inside;
+  }
+}
