@@ -1,36 +1,39 @@
-import Navigation from '@/components/nav'
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import "./globals.css";
+import Navigation from "@/components/nav";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cocktail Recipes - Gerardo's Bar",
-  description: "A collection of cocktail recipies.From classic cocktails to unique creations, find your perfect drink here.",
+  description:
+    "A collection of cocktail recipies.From classic cocktails to unique creations, find your perfect drink here.",
   viewport: {
-    width: 'device-width',
+    width: "device-width",
     initialScale: 1,
     maximumScale: 1,
   },
-  keywords:"cocktail recipes, mixed drinks, alcoholic beverages, cocktails, drink ideas",
-  authors:{
-    name:"Raul Ramirez",
-    url: "https://us-central1-drinkapi-9006c.cloudfunctions.net/drinkAPI"
-  }
-}
+  keywords:
+    "cocktail recipes, mixed drinks, alcoholic beverages, cocktails, drink ideas",
+  authors: {
+    name: "Raul Ramirez",
+    url: "https://us-central1-drinkapi-9006c.cloudfunctions.net/drinkAPI",
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navigation/>
-        {children}
+        <Navigation />
+        <main>{children}</main>
       </body>
     </html>
-  )
+  );
 }

@@ -10,10 +10,10 @@
 }
 
 .line {
-  width: 2px; 
-  height: 2px; 
-  background-color: #f4efef; 
-  opacity: 1; 
+  width: 2px;
+  height: 2px;
+  background-color: #f4efef;
+  opacity: 1;
   animation: expandLine 2s ease-out forwards, splitLine 1s 1s ease-out forwards;
 }
 
@@ -21,10 +21,7 @@
   0% {
     width: 0;
   }
-  70% {
-    width: 70%; 
-  }
   100% {
-    width: 90%;
+    width: 100%;
   }
 }

@@ -1,20 +1,17 @@
-'use client'
-import './page.css'
+"use client";
+import "./page.css";
 
-
-import TitleTransform from '../components/titleTransform';
-import AnimatedLine from '../components/animatedLine';
+import TitleTransform from "../components/titleTransform";
+import AnimatedLine from "../components/animatedLine";
 
 export default function Home() {
   const name = "Gerardo Navarro";
-  const greeting = "Hello im a Bartender based out of San Jose, CA"
+  const greeting = "Hello im a Bartender based out of San Jose, CA";
   return (
-     <main>
-      <div className='intro'>
-      <AnimatedLine/>
-      <TitleTransform name={name} greeting={greeting} ></TitleTransform>
-      <AnimatedLine/>
-      </div>
-     </main>
+    <div className="intro">
+      <AnimatedLine />
+      <TitleTransform name={name} greeting={greeting}></TitleTransform>
+      <AnimatedLine />
+    </div>
   );
 }

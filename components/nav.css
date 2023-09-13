@@ -6,7 +6,7 @@ nav {
   color: gray; /* Default text color */
   align-items: center;
   margin-bottom: 20px;
-  z-index: 2000 ;
+  z-index: 2000;
 }
 
 nav ul {
@@ -22,10 +22,6 @@ nav li {
   margin-left: 20px; /* Adjust spacing between items */
 }
 
-nav .spacer {
-  flex-grow: 1; /* Empty space that takes up remaining available space */
-}
-
 nav a {
   text-decoration: none;
   color: gray; /* Default text color */
@@ -35,4 +31,3 @@ nav a {
 nav a:hover {
   color: white;
 }
-

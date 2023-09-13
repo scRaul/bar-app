@@ -1,15 +1,18 @@
 import "./adminDash.css";
 
 import React, { useEffect, useState } from "react";
-import Drink from "../interfaces/drink";
+import Drink from "../interfaces/iDrink";
 import { getAll } from "../controllers/request";
-import PolaroidCard from "./adminCard";
 import EditDrink from "./editDrink";
 import AdminCard from "./adminCard";
 import { deleteDrink } from "../controllers/request";
-import { Martini, PlusCircle } from "lucide-react";
+import { Martini, PlusCircle, LogOut } from "lucide-react";
 
-const AdminDash = () => {
+interface AdminDashProps {
+  onLogOut: () => void;
+}
+
+const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
   const [drinks, setDrinks] = useState<Drink[]>([]);
   const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
   const [newDrink, setNewDrink] = useState(false);
@@ -58,23 +61,25 @@ const AdminDash = () => {
       console.log(error);
     }
   };
-  const handleUpdateDrink = async() => {
+  const handleUpdateDrink = async () => {
     alert("updated drink");
     await getDrinkList();
     closeDrinkInfo();
   };
-  const handleAddNewDrink = async() => {
+  const handleAddNewDrink = async () => {
     alert("added a new Drink");
     await getDrinkList();
     closeDrinkInfo();
   };
   return (
-    <main>
-      <div className="pl" onClick={openNewDrink}>
-        <Martini className="plus-button" size={50} />
-        <PlusCircle className="plus" size={25} />
+    <div className="admin-dash">
+      <div className="admin-cntrl">
+        <div className="add-bttn bttn" onClick={openNewDrink}>
+          <PlusCircle className="plus-icon" size={25} />
+          <Martini size={50} />
+        </div>
+        <LogOut size={50} className="bttn" onClick={onLogOut} />
       </div>
-      <hr></hr>
 
       <div className={`drinks ${selectedDrink || newDrink ? "blur" : ""}`}>
         {drinks.map((drink) => (
@@ -100,12 +105,9 @@ const AdminDash = () => {
         />
       )}
       {newDrink && (
-        <EditDrink
-          onClose={closeDrinkInfo}
-          onSave={handleAddNewDrink}
-        />
+        <EditDrink onClose={closeDrinkInfo} onSave={handleAddNewDrink} />
       )}
-    </main>
+    </div>
   );
 };
 

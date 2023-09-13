@@ -1,4 +1,4 @@
-export default interface Drink {
+export default interface IDrink {
     name : string
     price : number
     description: string

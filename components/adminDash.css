@@ -1,36 +1,18 @@
-hr{
-    position: absolute;
-    width: 90%;
-    left: 5%;
-    top: 120px;
-    border: 1px solid white;;
+.admin-dash {
+  width: inherit;
+  display: flex;
 }
-.drinks{
-    display: flex;
-    position: absolute;
-    height: 100vh;
-    width: 90%;
-    left: 5%;
-    top: 150px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.admin-cntrl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.blur{
-    filter: blur(5px);
+.add-bttn {
+  display: grid;
+  place-items: center;
 }
-.plus-button{
-    position: fixed;
-    top: 50px;
-    left: 20px;
-}
-.plus{
-    position: fixed;
-    top:36px;
-    left: 12px;
-}
-.pl{
-    color: gray;
-}
-.pl:hover{
-    color: white;
+.plus-icon {
+  position: relative;
+  top: 10px;
+  left: 15px;
 }

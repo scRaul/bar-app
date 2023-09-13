@@ -1,54 +1,29 @@
-.drinkForm{
-    width: 100%;
-    height: 300px;
+.save {
+  float: right;
 }
-.card {
-    position: relative;
+.short-input {
+  width: 50%;
 }
-.save{
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+.mid-input {
+  width: 80%;
 }
-.detail-modal .card{
-    height: 500px;
+textarea {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  width: 100%;
+  min-height: 80px;
 }
-input{
-    outline: none;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    background-color: rgba(0,0,0,0);
-    border-radius: 5px;
-    width: 100%;
-
-    height: 32px;
-    font-size: 18px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding: 2px;
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
-.short-input{
-    width: 50%;
-}
-.mid-input{
-    width: 80%;
-}
-textarea{
-    outline: none;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    background-color: rgba(0,0,0,0);
-    border-radius: 5px;
-    width: 100%;
-    min-height: 80px;
-}
-.list{
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-}
-.item{
-    margin: 4px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.item {
+  margin: 4px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
