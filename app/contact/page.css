@@ -11,6 +11,11 @@
     flex-direction: row;
   }
 }
+@media (orientation: landscape){
+  .contact-box{
+    flex-direction: row;
+  }
+}
 .contact-box .card {
   width: 350px;
   height: 200px;
