@@ -7,6 +7,7 @@ import EditDrink from "./editDrink";
 import AdminCard from "./adminCard";
 import { deleteDrink } from "../controllers/request";
 import { Martini, PlusCircle, LogOut } from "lucide-react";
+import ConfirmationModal from "./confirmModal";
 
 interface AdminDashProps {
   onLogOut: () => void;
@@ -16,7 +17,9 @@ const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
   const [drinks, setDrinks] = useState<Drink[]>([]);
   const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
   const [newDrink, setNewDrink] = useState(false);
-
+  const [loggingOut,setLoggingOut] = useState(false);
+  const [deleting,setDeleting] = useState(false);
+  
   const getDrinkList = async () => {
     try {
       let drinkJson = await getAll();
@@ -45,7 +48,22 @@ const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
   const openNewDrink = () => {
     setNewDrink(true);
   };
+  const openLogOutConfirmation = () =>{
+    setLoggingOut(true);
+  }
+  const closeLogOutConfirmation = () =>{
+    setLoggingOut(false);
+  }
+  const openDeleteConfirmation = (drink:Drink) =>{
+    setDeleting(true);
+    setSelectedDrink(drink);
+  }
+  const closeDeletingConfirmation = ()=>{
+    setDeleting(false);
+    setSelectedDrink(null);
+  }
   const handleDeleteDrink = async (drinkName: string) => {
+    closeDeletingConfirmation();
     const token = localStorage.getItem("jwtToken");
     if (!token) {
       console.log("no tokenn found");
@@ -56,6 +74,7 @@ const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
       setDrinks((prevDrinks) =>
         prevDrinks.filter((drink) => drink.name != drinkName)
       );
+      alert("succesfully deleted a drink");
       await getDrinkList();
     } catch (error) {
       console.log(error);
@@ -78,10 +97,12 @@ const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
           <PlusCircle className="plus-icon" size={25} />
           <Martini size={50} />
         </div>
-        <LogOut size={50} className="bttn" onClick={onLogOut} />
+        <LogOut size={50} className="bttn" onClick={openLogOutConfirmation} />
       </div>
 
-      <div className={`drinks ${selectedDrink || newDrink ? "blur" : ""}`}>
+      <div className={`drinks ${
+          (selectedDrink || newDrink ||loggingOut) ? "blur" : ""}`
+        }>
         {drinks.map((drink) => (
           <AdminCard
             key={drink.downloadURL}
@@ -92,12 +113,12 @@ const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
             description={drink.description}
             ingredientList={drink.ingredientList}
             onEdit={() => openDrinkInfo(drink)}
-            onDelete={() => handleDeleteDrink(drink.name)}
+            onDelete={()=>openDeleteConfirmation(drink)}
           />
         ))}
       </div>
 
-      {selectedDrink && (
+      {(selectedDrink && !deleting) && (
         <EditDrink
           drink={selectedDrink}
           onClose={closeDrinkInfo}
@@ -107,6 +128,21 @@ const AdminDash: React.FC<AdminDashProps> = ({ onLogOut }) => {
       {newDrink && (
         <EditDrink onClose={closeDrinkInfo} onSave={handleAddNewDrink} />
       )}
+      {loggingOut && (
+        <ConfirmationModal
+            message="You are about to sign out"
+            onConfirm={onLogOut}
+            onClose={closeLogOutConfirmation}
+        />
+      )}
+      {(deleting && selectedDrink) && (
+        <ConfirmationModal
+            message="Confrim to delete"
+            onConfirm={()=>handleDeleteDrink(selectedDrink.name)}
+            onClose={closeDeletingConfirmation}
+        />
+      )}
+
     </div>
   );
 };

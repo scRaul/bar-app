@@ -1,0 +1,17 @@
+.confirm{
+    background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.505);
+  border-radius: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: border-color 1s ease; 
+}
+.yes:hover{
+    border-color: rgb(48, 172, 48);
+}
+.no:hover{
+    border-color: red;
+}
