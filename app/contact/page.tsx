@@ -31,7 +31,7 @@ function Contact() {
     <>
       <div className="contact-box">
         {socials.map((s) => (
-          <Card>
+          <Card key={s.href}>
             <Link href={s.href} target="_blank">
               <span aria-hidden="true" />
               <div className="icon">{s.icon}</div>{" "}
