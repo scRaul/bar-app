@@ -9,14 +9,14 @@ const Navigation = () => {
           <Link href="/"> Home </Link>
         </li>
         <li>
-          <Link href="/admin"> Admin </Link>
+          <Link href="/drinks"> Drinks </Link>
         </li>
         <li className="spacer">&nbsp;</li>
         <li>
-          <Link href="/drinks"> Drinks </Link>
+          <Link href="/contact"> Contact </Link>
         </li>
         <li>
-          <Link href="/contact"> Contact </Link>
+          <Link href="/admin"> Admin </Link>
         </li>
       </ul>
     </nav>
