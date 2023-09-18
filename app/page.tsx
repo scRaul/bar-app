@@ -53,7 +53,7 @@ const SinglePageView = () => {
  
   return (
     <>
-      <nav className={`${focus != FOCUS.HEADER ? 'fill':''}`}>
+      <nav>
         <ul>
           <li className={`${focus == FOCUS.HEADER ? 'li-focus':''}`}>
             <ScrollToLink targetId="header" label="About" handleClick={()=>setFocus(FOCUS.HEADER)}/>
