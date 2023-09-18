@@ -21,10 +21,8 @@ const FOCUS ={
 
 const SinglePageView = () => {
   const [drinks, setDrinks] = useState<Drink[]>([]);
-  const [imageList, setImageList] = useState<string[]>([]);
   const [imagesLoaded,setImagesLoaded] =useState(false);
   const [focus,setFocus] = useState(FOCUS.HEADER);
-  const [selectedDrink,setSelectedDrink] = useState<Drink | null>(null);
 
   useEffect(() => {
     const getDrinkList = async () => {
@@ -36,9 +34,7 @@ const SinglePageView = () => {
         drinkJson = drinkJson.drinks;
         const list: Drink[] = Object.values(drinkJson);
         setDrinks(list);
-        let imageURLs = list.map((drink) => drink.downloadURL);
-       setImageList(imageURLs);
-       setImagesLoaded(true);
+        setImagesLoaded(true);
       } catch (err) {
         console.log(err);
         throw err;
@@ -46,6 +42,15 @@ const SinglePageView = () => {
     };
     getDrinkList();
   }, []);
+  const defaultDrink:Drink = {
+    name: "name",
+    price:0.00,
+    downloadURL:'/lowRes.jpg',
+    description:"placeholder",
+    imagePath:'/lowRes.jpg',
+    ingredientList:[]
+  }
+ 
   return (
     <>
       <nav className={`${focus != FOCUS.HEADER ? 'fill':''}`}>
@@ -76,17 +81,21 @@ const SinglePageView = () => {
       <h2 id="drinks" className='first' onMouseEnter={()=>setFocus(FOCUS.GALLERY)}  > Drinks </h2>
 
       {imagesLoaded ? (
-      <Gallery id="gallery" pageSize={imageList.length} imageList={imageList} blur={false}   handleEnter={()=>{setFocus(FOCUS.GALLERY)}}/>
+      <Gallery id="gallery" pageSize={drinks.length} 
+       drinkList={drinks} 
+       blur={false}  
+       handleEnter={()=>{setFocus(FOCUS.GALLERY)}}/>
       ):(
-        <Gallery id="gallery" pageSize={8} imageList={
-          ["/lowRes.jpg","/lowRes.jpg","/lowRes.jpg","/lowRes.jpg",
-          "/lowRes.jpg","/lowRes.jpg","/lowRes.jpg","/lowRes.jpg"]
+        <Gallery id="gallery" pageSize={8} drinkList={[
+          defaultDrink,defaultDrink,defaultDrink,defaultDrink,
+          defaultDrink,defaultDrink,defaultDrink,defaultDrink,
+        ]
+        
         }
         blur={true}
         handleEnter={()=>{setFocus(FOCUS.GALLERY)}}
         />
       )
-
       }
 
       <section id="contact" className="contact" onMouseEnter={()=>setFocus(FOCUS.CONTACT)}>

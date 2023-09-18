@@ -1,9 +1,12 @@
 import './Gallery.css'
 import { useState } from "react";
+import DrinkInfo from './drinkInfo';
+import Drink from '@/interfaces/iDrink'
+
 interface GalleryProps {
     id?:string;
     className?:string;
-    imageList: string[];
+    drinkList:Drink[];
     pageSize:number;
     blur:boolean;
     handleEnter?:()=>void;
@@ -11,11 +14,12 @@ interface GalleryProps {
 
 
 
-const Gallery:React.FC<GalleryProps> = ({id,className,imageList,pageSize,blur,handleEnter}) =>{
+const Gallery:React.FC<GalleryProps> = ({id,className,drinkList,pageSize,blur,handleEnter}) =>{
     const [currentIndex,setCurrentIndex] = useState(0);
     const [loadedImages, setLoadedImages] = useState<{ [index: number]: boolean }>({});
+    const [selectedDrink,setSelectedDrink] = useState<Drink | null>(null);
 
-    const nextImages = imageList.slice(currentIndex,currentIndex+pageSize);
+    const nextDrinks = drinkList.slice(currentIndex,currentIndex+pageSize);
     
     const handleImageLoad = (index:number) => {
         // Update the loadedImages state to indicate that the image at the given index has loaded
@@ -25,14 +29,15 @@ const Gallery:React.FC<GalleryProps> = ({id,className,imageList,pageSize,blur,ha
         }));
       };
 
+      
     return (
         <article id={id} className={`gallery ${className} `} onMouseEnter={handleEnter}>
 
                 <section className='window'>
-                {nextImages.map( (src,index)=>(
+                {nextDrinks.map( (drink,index)=>(
                     <div className={`g-img-box  ${loadedImages[index] ? 'loaded' : ''}`} key={index}>
                         <img className={`g-img ${ blur ? 'img-blur' :'img-fade'}`} 
-                            src={src}
+                            src={drink.downloadURL}
                             onLoad={() => handleImageLoad(index)}
                         /> 
                     </div>
