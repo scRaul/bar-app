@@ -6,11 +6,12 @@ interface GalleryProps {
     imageList: string[];
     pageSize:number;
     blur:boolean;
+    handleEnter?:()=>void;
 }
 
 
 
-const Gallery:React.FC<GalleryProps> = ({id,className,imageList,pageSize,blur}) =>{
+const Gallery:React.FC<GalleryProps> = ({id,className,imageList,pageSize,blur,handleEnter}) =>{
     const [currentIndex,setCurrentIndex] = useState(0);
     const [loadedImages, setLoadedImages] = useState<{ [index: number]: boolean }>({});
 
@@ -25,7 +26,7 @@ const Gallery:React.FC<GalleryProps> = ({id,className,imageList,pageSize,blur}) 
       };
 
     return (
-        <article id={id} className={`gallery ${className} `}>
+        <article id={id} className={`gallery ${className} `} onMouseEnter={handleEnter}>
 
                 <section className='window'>
                 {nextImages.map( (src,index)=>(

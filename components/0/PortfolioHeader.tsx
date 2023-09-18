@@ -6,13 +6,16 @@ interface portfolioHeaderProps {
     lname: string;
     subtitles: string[];
     description: string;
+    handleEnter?:()=>void;
 }
 
-const PortfolioHeader: React.FC<portfolioHeaderProps> = ({id,className,fname,lname,subtitles,description}) =>{
+const PortfolioHeader: React.FC<portfolioHeaderProps> = ({id,className,fname,lname,subtitles,description,
+    handleEnter
+}) =>{
 
 
     return (
-       <header id={id} className={`portfolio-header ${className}`}>
+       <header id={id} className={`portfolio-header ${className}`} onMouseEnter={handleEnter}>
         <div className="group">
             <h4 className="first">{fname}</h4> <h4 className="second">{' '+lname}</h4>
         </div>
