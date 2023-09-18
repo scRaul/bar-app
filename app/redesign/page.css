@@ -2,11 +2,10 @@ nav {
     position: fixed;
     top: 0px;
     width: 100%;
-    color: gray; /* Default text color */
     align-items: center;
     z-index: 2000;
     background-color: rgba(0, 0, 0, 0);
-    padding-right:1rem;
+    padding-right:30px;
   }
   
   nav ul {
@@ -23,12 +22,12 @@ nav {
   }
   
   nav a {
+    font-size: 14px;
     text-decoration: none;
-    color: gray; /* Default text color */
     transition: color 0.3s ease; /* Smooth color transition on hover */
   }
   
   nav a:hover {
-    color: white;
+    color: #DC143C;
   }
   

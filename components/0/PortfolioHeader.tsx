@@ -14,7 +14,7 @@ const PortfolioHeader: React.FC<portfolioHeaderProps> = ({id,className,fname,lna
     return (
        <header id={id} className={`portfolio-header ${className}`}>
         <div className="group">
-            <h3 className="first">{fname}</h3> <h3 className="second">{' '+lname}</h3>
+            <h4 className="first">{fname}</h4> <h4 className="second">{' '+lname}</h4>
         </div>
         <div className='group group-c'>
             {subtitles.map( (str,index) =>(
