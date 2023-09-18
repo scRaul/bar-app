@@ -29,7 +29,12 @@ const Gallery:React.FC<GalleryProps> = ({id,className,drinkList,pageSize,blur,ha
         }));
       };
 
-      
+      const openDrinkInfo = (drink: Drink) => {
+        setSelectedDrink(drink);
+      };
+      const closeDrinkInfo = () => {
+        setSelectedDrink(null);
+      };
     return (
         <article id={id} className={`gallery ${className} `} onMouseEnter={handleEnter}>
 
@@ -39,10 +44,15 @@ const Gallery:React.FC<GalleryProps> = ({id,className,drinkList,pageSize,blur,ha
                         <img className={`g-img ${ blur ? 'img-blur' :'img-fade'}`} 
                             src={drink.downloadURL}
                             onLoad={() => handleImageLoad(index)}
+                            onClick={()=>openDrinkInfo(drink)}
                         /> 
                     </div>
                 ))} 
-                  </section>           
+                  </section>  
+
+                  {selectedDrink && (
+        <DrinkInfo drink={selectedDrink} onClose={closeDrinkInfo} />
+      )}         
         </article>
     )
 }
