@@ -56,13 +56,13 @@ const SinglePageView = () => {
       <nav className={`${focus != FOCUS.HEADER ? 'fill':''}`}>
         <ul>
           <li className={`${focus == FOCUS.HEADER ? 'li-focus':''}`}>
-            <ScrollToLink targetId="header" label="About"/>
+            <ScrollToLink targetId="header" label="About" handleClick={()=>setFocus(FOCUS.HEADER)}/>
           </li>
           <li className={`${focus == FOCUS.GALLERY ? 'li-focus':''}`}>
-            <ScrollToLink targetId="drinks" label="Drinks" />
+            <ScrollToLink targetId="drinks" label="Drinks" handleClick={()=>setFocus(FOCUS.GALLERY)}/>
           </li>
           <li className={`${focus == FOCUS.CONTACT? 'li-focus':''}`}>
-            <ScrollToLink targetId="contact" label="Contact"/>
+            <ScrollToLink targetId="contact" label="Contact" handleClick={()=>setFocus(FOCUS.CONTACT)}/>
           </li>
         </ul>
       </nav>
