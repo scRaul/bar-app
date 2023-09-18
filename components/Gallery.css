@@ -2,12 +2,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fit,minmax(50px,250px));
     gap: 5px;
     align-items: center;
     padding: 1rem;
 }
 .g-img-box{
-    margin: 1px;
     overflow: hidden;
 }
 .g-img{

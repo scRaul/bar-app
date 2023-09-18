@@ -24,7 +24,7 @@ const SinglePageView = () => {
   const [imageList, setImageList] = useState<string[]>([]);
   const [imagesLoaded,setImagesLoaded] =useState(false);
   const [focus,setFocus] = useState(FOCUS.HEADER);
-  const [selectedDrink,setSelectedDrink] = useState<Drink>()
+  const [selectedDrink,setSelectedDrink] = useState<Drink | null>(null);
 
   useEffect(() => {
     const getDrinkList = async () => {
@@ -104,9 +104,9 @@ const SinglePageView = () => {
         ))}
         </div>
       </section>
-      <footer className={`first ${focus == FOCUS.CONTACT? 'f-focus':''}`}>
+      <footer className='first'>
           <p>Developed by Raul Ramirez</p>
-          <Link href="/admin">Admin Page</Link>
+          <Link href="/admin"><u>Admin Page</u></Link>
         </footer>
     </>
   );
