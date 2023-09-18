@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+#bg-img{
+  background-image: url('/bar.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
 
 nav {
   position: fixed;
@@ -49,23 +55,22 @@ nav a:hover {
 .contact{
   height: 80vh;
   padding-top: 50px
-}
+} 
 #socials-box{
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 #socials-box .card{
   width: calc(30%);
   max-width: 300px;
   margin: 10px;
   text-align: center;
-  background-color:  #008080;;
+  background-color: #191970;
 }
 footer{
   text-align: center;
-  color:black
+  color:blac
 }
 .f-focus{
   background-color:#C0C0C0;
@@ -74,6 +79,9 @@ footer{
 @media(max-width: 750px) {
   #socials-box{
     flex-direction: column;
+  }
+  #socials-box .card{
+    width: 100%;
   }
   
 }

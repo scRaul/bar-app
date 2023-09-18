@@ -5,6 +5,14 @@
     padding-left: 30px;
     font-family: Arial, sans-serif;
 }
+@media (min-width:430px ) {
+    .portfolio-header{
+        background-image: url('/bar.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+    }
+}
 .group{
     display: flex;
 }

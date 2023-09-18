@@ -16,11 +16,10 @@ const ContactBox: React.FC<ContactBoxProps> = ({id,className,icon,href,label,han
     return (
         <aside id={id} className={`contact-box ${className}`}>
             <Link href={href} target="_blank">
-              <span aria-hidden="true" />
               <div className="cb-icon">{icon}</div>
+              </Link>
               <div className="cb-handle">{handle}</div>
               <div className="cb-label">{label}</div>
-            </Link>
         </aside>
     )
 }

@@ -24,6 +24,7 @@ const SinglePageView = () => {
   const [imageList, setImageList] = useState<string[]>([]);
   const [imagesLoaded,setImagesLoaded] =useState(false);
   const [focus,setFocus] = useState(FOCUS.HEADER);
+  const [selectedDrink,setSelectedDrink] = useState<Drink>()
 
   useEffect(() => {
     const getDrinkList = async () => {
@@ -71,7 +72,8 @@ const SinglePageView = () => {
         handleEnter={()=>{setFocus(FOCUS.HEADER)}}
         
       />
-      <h2 id="drinks" onMouseEnter={()=>setFocus(FOCUS.GALLERY)}  > Drinks </h2>
+
+      <h2 id="drinks" className='first' onMouseEnter={()=>setFocus(FOCUS.GALLERY)}  > Drinks </h2>
 
       {imagesLoaded ? (
       <Gallery id="gallery" pageSize={imageList.length} imageList={imageList} blur={false}   handleEnter={()=>{setFocus(FOCUS.GALLERY)}}/>
@@ -88,12 +90,12 @@ const SinglePageView = () => {
       }
 
       <section id="contact" className="contact" onMouseEnter={()=>setFocus(FOCUS.CONTACT)}>
-      <h2> Contact </h2>
+      <h2 className='first'> Contact </h2>
         <div id="socials-box">
         {socials.map((s, index) => (
           <ContactBox
             key={index}
-            className="card"
+            className="card second"
             icon={s.icon}
             href={s.href}
             label={s.label}
@@ -102,7 +104,7 @@ const SinglePageView = () => {
         ))}
         </div>
       </section>
-      <footer className={`${focus == FOCUS.CONTACT? 'f-focus':''}`}>
+      <footer className={`first ${focus == FOCUS.CONTACT? 'f-focus':''}`}>
           <p>Developed by Raul Ramirez</p>
           <Link href="/admin">Admin Page</Link>
         </footer>
