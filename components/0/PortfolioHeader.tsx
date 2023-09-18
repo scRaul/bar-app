@@ -1,5 +1,6 @@
-
+import './PortfolioHeader.css'
 interface portfolioHeaderProps {
+    id?:string;
     className?:string;
     fname : string;
     lname: string;
@@ -7,12 +8,11 @@ interface portfolioHeaderProps {
     description: string,
 }
 
-const PortfolioHeader: React.FC<portfolioHeaderProps> = ({className,fname,lname,subtitle,description}) =>{
+const PortfolioHeader: React.FC<portfolioHeaderProps> = ({id,className,fname,lname,subtitle,description}) =>{
 
 
     return (
-       <header className={`portfolio-header ${className}`}>
-        <button>Contact</button>
+       <header id={id} className={`portfolio-header ${className}`}>
         <h2>{fname}</h2>
         <h2>{lname}</h2>
         <h1>{subtitle}</h1>

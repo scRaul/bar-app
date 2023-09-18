@@ -1,12 +1,9 @@
+import './ContactBox.css'
 import Link from "next/link";
 import { JsxElement } from "typescript";
 
-
-
-
-
 interface ContactBoxProps {
-    key: number;
+    id?:string;
     className?: string;
     icon: JSX.Element;
     href: string;
@@ -14,10 +11,10 @@ interface ContactBoxProps {
     handle: string;
 }
 
-const ContactBox: React.FC<ContactBoxProps> = ({className,icon,href,label,handle}) =>{
+const ContactBox: React.FC<ContactBoxProps> = ({id,className,icon,href,label,handle}) =>{
     
     return (
-        <aside className={`contact-box ${className}`}>
+        <aside id={id} className={`contact-box ${className}`}>
             <Link href={href} target="_blank">
               <span aria-hidden="true" />
               <div className="cb-icon">{icon}</div>
