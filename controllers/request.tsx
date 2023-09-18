@@ -5,7 +5,7 @@ export const getAll = async () => {
   let drinkList = sessionStorage.getItem('drinkList');
   let drinkTime = sessionStorage.getItem('drinkTime');
   if(drinkList && drinkTime){
-    if(Date.now()-parseInt(drinkTime) < (60 * 1000)){
+    if(Date.now()-parseInt(drinkTime) < (3600 * 1000)){
       console.log('returning session drinks');
       return JSON.parse(drinkList);
     }
