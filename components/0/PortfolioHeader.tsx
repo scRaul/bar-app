@@ -4,19 +4,25 @@ interface portfolioHeaderProps {
     className?:string;
     fname : string;
     lname: string;
-    subtitle: string,
-    description: string,
+    subtitles: string[];
+    description: string;
 }
 
-const PortfolioHeader: React.FC<portfolioHeaderProps> = ({id,className,fname,lname,subtitle,description}) =>{
+const PortfolioHeader: React.FC<portfolioHeaderProps> = ({id,className,fname,lname,subtitles,description}) =>{
 
 
     return (
        <header id={id} className={`portfolio-header ${className}`}>
-        <h2>{fname}</h2>
-        <h2>{lname}</h2>
-        <h1>{subtitle}</h1>
-        <p>{description}</p>
+        <div className="group">
+            <h3 className="first">{fname}</h3> <h3 className="second">{' '+lname}</h3>
+        </div>
+        <div className='group group-c'>
+            {subtitles.map( (str,index) =>(
+
+                <h1 className={`${ !(index%2) ? 'first':'second'}`}>{str}</h1>
+            ))}
+        </div>
+        <p id="description">{description}</p>
        </header>
     );
 

@@ -1,5 +1,27 @@
 .portfolio-header{
-    background-color: blue;
+    background-color: #191970;
     padding: 15px;
-    height: 500px;
+    height: 70vh;
+    padding-left: 30px;
+}
+h3{
+    font-family: Arial, sans-serif;
+}
+.group{
+    display: flex;
+}
+.group.group-c{
+    height:25%;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.first{
+    color: #800080;
+}
+.second{
+    color:#C0C0C0;
+}
+#description{
+    margin-top: 20px;
+    width: 66%;
 }

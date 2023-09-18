@@ -15,6 +15,7 @@ import ScrollToLink from "@/components/0/ScrollToLink";
 const SinglePageView = () => {
   const [drinks, setDrinks] = useState<Drink[]>([]);
   const [imageList, setImageList] = useState<string[]>([]);
+  const [imagesLoaded,setImagesLoaded] =useState(false);
 
   useEffect(() => {
     const getDrinkList = async () => {
@@ -26,8 +27,9 @@ const SinglePageView = () => {
         drinkJson = drinkJson.drinks;
         const list: Drink[] = Object.values(drinkJson);
         setDrinks(list);
-        let imageURLs = list.map((drink) => drink.description);
-        setImageList(imageURLs);
+        let imageURLs = list.map((drink) => drink.downloadURL);
+       setImageList(imageURLs);
+       setImagesLoaded(true);
       } catch (err) {
         console.log(err);
         throw err;
@@ -54,13 +56,26 @@ const SinglePageView = () => {
         id="header"
         fname="Gerardo"
         lname="Navarro"
-        subtitle="Mixologist Extraordinaire"
+        subtitles={["Mixologist","Extraordinaire"]}
         description="My journey in the art of crafting cocktails unfolded over 5 years ago
             from casual dine in the prestigous relm of luxuary hotels. I take pride in being a 
             distingueshed bartendder."
       />
       <h2 id="drinks"> Drinks </h2>
-      <Gallery id="gallery" pageSize={8} imageList={imageList} />
+
+      {imagesLoaded ? (
+      <Gallery id="gallery" pageSize={8} imageList={imageList} blur={false} />
+      ):(
+        <Gallery id="gallery" pageSize={8} imageList={
+          ["/lowRes.jpg","/lowRes.jpg","/lowRes.jpg","/lowRes.jpg",
+          "/lowRes.jpg","/lowRes.jpg","/lowRes.jpg","/lowRes.jpg"]
+        }
+        blur={true}
+        />
+      )
+
+      }
+
       <h2 id="contact"> Contact </h2>
       <section>
         {socials.map((s, index) => (
