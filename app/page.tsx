@@ -71,9 +71,8 @@ const SinglePageView = () => {
         fname="Gerardo"
         lname="Navarro"
         subtitles={["Mixologist","Extraordinaire"]}
-        description="My journey in the art of crafting cocktails unfolded over 5 years ago
-            from casual dine in the prestigous relm of luxuary hotels. I take pride in being a 
-            distingueshed bartendder."
+        description="My journey in the art of crafting cocktails began over 5 years ago in the 
+        prestigious realm of luxury hotels. I take pride in being a distinguished bartender."
         handleEnter={()=>{setFocus(FOCUS.HEADER)}}
         
       />
