@@ -1,5 +1,6 @@
 .portfolio-header{
-    background-color: #191970;
+   /* background-color: #191970; */
+    background-color: #C62828;
     padding: 15px;
     height: 70vh;
     padding-left: 30px;
@@ -21,12 +22,6 @@
     height:25%;
     flex-direction: column;
     justify-content: flex-end;
-}
-.first{
-    color: #008080;
-}
-.second{
-    color:#C0C0C0;
 }
 #description{
     margin-top: 20px;

@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Cocktail Recipes - Gerardo's Bar",
+  title: "Cocktail Menu - Gerardo's Bar",
   description:
     "A collection of cocktail recipies.From classic cocktails to unique creations, find your perfect drink here.",
   viewport: {

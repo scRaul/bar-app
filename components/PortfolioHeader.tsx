@@ -22,7 +22,7 @@ const PortfolioHeader: React.FC<portfolioHeaderProps> = ({id,className,fname,lna
         <div className='group group-c'>
             {subtitles.map( (str,index) =>(
 
-                <h1 className={`${ !(index%2) ? 'first':'second'}`}>{str}</h1>
+                <h1 key={index} className={`${ !(index%2) ? 'first':'second'}`}>{str}</h1>
             ))}
         </div>
         <p id="description">{description}</p>

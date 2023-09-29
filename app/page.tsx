@@ -114,7 +114,12 @@ const SinglePageView = () => {
         </div>
       </section>
       <footer className='first'>
-          <p>Developed by Raul Ramirez</p>
+          <p>Developed by:   
+            <a href="https://www.linkedin.com/in/raul-rl/">
+              <u>Raul Ramirez</u>
+            </a>
+          </p>
+          <br/>
           <Link href="/admin"><u>Admin Page</u></Link>
         </footer>
     </>

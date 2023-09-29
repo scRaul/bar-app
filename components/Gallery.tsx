@@ -38,7 +38,7 @@ const Gallery:React.FC<GalleryProps> = ({id,className,drinkList,pageSize,blur,ha
     return (
         <article id={id} className={`gallery ${className} `} onMouseEnter={handleEnter}>
 
-                <section className='window'>
+                <section className = {`window ${(selectedDrink)? 'blur': ''} `}>
                 {nextDrinks.map( (drink,index)=>(
                     <div className={`g-img-box  ${loadedImages[index] ? 'loaded' : ''}`} key={index}>
                         <img className={`g-img ${ blur ? 'img-blur' :'img-fade'}`} 

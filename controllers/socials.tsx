@@ -1,7 +1,14 @@
-import { Mail,Instagram,Linkedin } from "lucide-react";
+import { Mail,Instagram,Linkedin,DollarSign } from "lucide-react";
 
 const iconSize = 32;
 export const socials = [
+  {
+    icon: <DollarSign size={iconSize}/>,
+    href: "https://account.venmo.com/u/nvro93",
+    label: "Venmo",
+    handle: "@nvro93"
+  
+  },
   {
     icon: <Mail size={iconSize} />,
     href: "mailto:nav4rro@outlook.com",
@@ -10,9 +17,9 @@ export const socials = [
   },
   {
     icon: <Instagram size={iconSize} />,
-    href: "https://Instagram.com",
+    href: "https://www.instagram.com/gera.nvro/",
     label: "Instagram",
-    handle: "@gera4n",
+    handle: "@gera.nvro",
   },
   {
     icon: <Linkedin size={iconSize} />,
